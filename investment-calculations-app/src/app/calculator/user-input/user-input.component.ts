@@ -1,3 +1,4 @@
+import { CalculatorService } from './../calculator.service';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InvestmentData } from '../calculator.model';
@@ -15,10 +16,9 @@ export class UserInputComponent {
   expectedReturn = '5';
   duration = '10';
 
-  @Output() calculate = new EventEmitter<InvestmentData>();
-
+  constructor(private calculatorService: CalculatorService) {}
   onClickCalculate = () => {
-    this.calculate.emit({
+    this.calculatorService.calculateInvestmentResults({
       initialInvestment: +this.initialInvestment,
       annualInvestment: +this.annualInvestment,
       expectedReturn: +this.expectedReturn,

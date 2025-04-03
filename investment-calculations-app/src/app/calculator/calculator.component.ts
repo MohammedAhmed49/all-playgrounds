@@ -12,8 +12,5 @@ import { InvestmentResultsComponent } from "./investment-results/investment-resu
   styleUrl: './calculator.component.css',
 })
 export class CalculatorComponent {
-  calculatorData: AnnualData[] = [];
-  onCalculate = (investmentData: InvestmentData) => {
-    this.calculatorData = calculateInvestmentResults(investmentData);
-  };
+
 }
