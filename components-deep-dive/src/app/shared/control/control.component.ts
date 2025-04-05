@@ -6,6 +6,7 @@ import { Component, input, ViewEncapsulation } from '@angular/core';
   imports: [],
   templateUrl: './control.component.html',
   styleUrl: './control.component.css',
+  // We used it for styling the inputs and the textareas that are passed from outside
   encapsulation: ViewEncapsulation.None,
 })
 export class ControlComponent {
