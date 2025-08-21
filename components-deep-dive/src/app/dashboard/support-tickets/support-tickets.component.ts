@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NewTicketComponent } from './new-ticket/new-ticket.component';
 import { Ticket } from './support-tickets.model';
-import { TicketComponent } from "./ticket/ticket.component";
+import { TicketComponent } from './ticket/ticket.component';
 
 @Component({
   selector: 'app-support-tickets',
@@ -22,5 +22,15 @@ export class SupportTicketsComponent {
     });
 
     console.log(this.tickets);
+  }
+
+  onCloseTicket(closedTicket: Ticket) {
+    const newTickets: Ticket[] = this.tickets.map((ticket) => {
+      if (closedTicket.id === ticket.id) {
+        return { ...ticket, status: 'closed' };
+      } else return { ...ticket };
+    });
+
+    this.tickets = [...newTickets];
   }
 }
