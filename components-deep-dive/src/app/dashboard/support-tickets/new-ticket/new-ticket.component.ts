@@ -17,10 +17,12 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './new-ticket.component.css',
 })
 export class NewTicketComponent {
-  private form = viewChild<ElementRef<HTMLFormElement>>('form');
+  enteredTitle = '';
+  enteredRequest = '';
   add = output<{ title: string; text: string }>();
-  onSubmit(titleValue: string, requestValue: string) {
-    this.add.emit({ title: titleValue, text: requestValue });
-    this.form()?.nativeElement.reset();
+  onSubmit() {
+    this.add.emit({ title: this.enteredTitle, text: this.enteredRequest });
+    this.enteredTitle = '';
+    this.enteredRequest = '';
   }
 }
