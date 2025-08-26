@@ -9,9 +9,7 @@ import { Directive, input } from '@angular/core';
 })
 export class SafeLinkDirective {
   queryParam = input('my-app', { alias: 'appSafeLink' });
-  constructor() {
-    console.log('Safe link directive');
-  }
+  constructor() {}
 
   onLinkClick(event: MouseEvent) {
     const confirmClick = window.confirm('Do you want to leave our website');
