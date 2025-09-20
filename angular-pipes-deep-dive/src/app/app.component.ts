@@ -6,7 +6,7 @@ import { TempPipe } from './temprature.pipe';
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  imports: [DatePipe, DecimalPipe, TempPipe],
+  imports: [DatePipe, TempPipe],
 })
 export class AppComponent {
   currentDate = new Date();
